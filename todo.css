@@ -1,16 +1,25 @@
-* styles.css */ body {
+:root {
+  --main-color: black;
+  --secondary-color: white;
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --button-color: #726cf8;
+}
+
+body {
   font-family: "Arial", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  background-color: #f6f6f6;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .todo-container {
   width: 600px;
-  background-color: white;
+  background-color: var(--secondary-color);
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -21,6 +30,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 .todo-controls {
@@ -32,14 +42,20 @@
 .todo-search {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-color);
   border-radius: 5px;
   font-size: 16px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
-.todo-dropdown {
-  background-color: #726cf8;
-  color: white;
+.todo-dropdown,
+#todo-darkmode,
+.todo-edit,
+.todo-delete,
+.todo-add {
+  background-color: var(--button-color);
+  color: var(--secondary-color);
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -49,19 +65,8 @@
 }
 
 .todo-dropdown option {
-  background-color: white;
-  color: black;
-}
-
-.todo-darkmode {
-  background-color: #726cf8;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 10px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .todo-new-item {
@@ -79,23 +84,12 @@
 .todo-input {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-color);
   border-radius: 5px;
   font-size: 16px;
   margin-right: 10px;
-}
-
-.todo-edit,
-.todo-delete,
-.todo-add {
-  background-color: #726cf8;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 5px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .todo-edit {
@@ -107,7 +101,6 @@
 }
 
 .todo-add {
-  background-color: #726cf8;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -118,4 +111,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--main-color);
 }
